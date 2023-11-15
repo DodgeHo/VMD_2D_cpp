@@ -32,7 +32,7 @@ void save_image(const std::string& filename, const Eigen::MatrixXd& matrix) {
 
 int main() {
 	// create a signal2D to simulation the procedure.
-	MatrixXd signal2D = load_image("F:/VMD_2D_cpp/Sample.bmp");
+	MatrixXd signal2D = load_image("Sample.bmp");
 
 	// initial some input parameters
 	const int K = 5, DC = 1, init = 1;
