@@ -14,7 +14,6 @@ Mozilla Public License v. 2.0.
 
 Eigen::MatrixXd load_image(const std::string& filename) {
 	cimg_library::CImg<unsigned char> image(filename.c_str());
-	//cimg_library::CImg<double> image(filename.c_str());
 	Eigen::MatrixXd matrix(image.height(), image.width());
 	for (int i = 0; i < image.height(); i++)
 		for (int j = 0; j < image.width(); j++)
@@ -44,15 +43,12 @@ int main() {
 	//VMD 2D Process
 	VMD_2D(u, u_hat, omega, signal2D, alpha, tau, K, DC, init, tol, eps);
 
-
 	//Example 2: If you only wants to get sum result of the first n mode of signals.
 	for (int k = 0; k < K; k++) {
 		MatrixXd eachSignal = u[k];
 		string filename = "DecomResult_" + std::to_string(k) + ".bmp";
 		save_image(filename, eachSignal);
 	}
-
-
 	
 	return 0;
 }; 
